@@ -1,0 +1,17 @@
+<html>
+<body>
+<script>
+    var regex = /hello/gi;
+    var text = "Hello World!";
+
+    document.write(regex.source+"<br>");
+    document.write(regex.global+"<br>");
+    document.write(regex.ignoreCase+"<br>");
+    document.write(regex.test(text)+"<br>");
+    document.write(regex.exec(text)+"<br>");
+    document.write(regex.toString()+"<br>");
+    document.write(text.match(regex)+"<br>");
+    document.write(text.replace(regex,"PROGRAM")+"<br>");
+</script>
+</body>
+</html>

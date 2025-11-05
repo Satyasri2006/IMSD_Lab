@@ -1,0 +1,24 @@
+<html>
+<body>
+<script>
+	var a = window.prompt("Enter the first number:");
+	var b = window.prompt("Enter the second number:");
+	var c = window.prompt("Enter the third number:");
+	a=parseInt(a);
+	b=parseInt(b);
+	c=parseInt(c);
+	if(a==b && a==c){
+		document.write("EQUAL NUMBERS");
+	}
+	else if(a>=b && a>=c){
+		document.write(a, " LARGER NUMBER");
+	}
+	else if(b>=c && b>=a){
+		document.write(b, " LARGER NUMBER");
+	}
+	else if(c>=a && c>=b){
+		document.write(c, " LARGER NUMBER");
+	}
+</script>
+</body>
+</html>

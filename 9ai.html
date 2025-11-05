@@ -1,0 +1,21 @@
+<html>
+<head>
+	<script>
+		function factorial(){
+			var n = window.prompt("Enter a number: ");
+			n=parseInt(n);
+			if(n<0){
+				alert("Please enter a valid number.");
+                		return;
+			}
+			var i,res=1;
+			for(i = 1; i <= n; i++){
+				res*=i;
+			}
+			document.write("Factorial of ", n, " is ", res);
+		}
+	</script>
+</head>
+<body onload="factorial();">
+</body>
+</html>

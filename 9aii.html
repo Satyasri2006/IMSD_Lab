@@ -1,0 +1,30 @@
+<html>
+<head>
+	<script>
+		function fibonacci(){
+			var n = window.prompt("Enter a number: ");
+			n=parseInt(n);
+			if(n<=0){
+				alert("Please enter a valid number.");
+                		return;
+			}
+			var a=0, b=1, c;
+			if(n==1){
+				document.write(a);
+				return;
+			}
+			document.write(a, " ", b, " ");
+			n=n-2;
+			while(n){
+				c = a + b;
+				a = b;
+				b = c;
+				n--;
+				document.write(c, " ");
+			}
+		}
+	</script>
+</head>
+<body onload="fibonacci();">
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<body>
+<script>
+	var a=[2,4,6,8];
+	document.write(a+"<br>");	//2,4,6,8
+	//length - properties
+	document.write(a.length+"<br>");	//4
+	a.pop();	//2,4,6
+	document.write(a+"<br>");
+	a.push(10);	//2,4,6,10
+	document.write(a+"<br>");
+	a.unshift(1);	//1,2,4,6,10
+	document.write(a+"<br>");
+	document.write(a.join(' & ')+"<br>");	//1 & 2 & 4 & 6 & 10
+	a.splice(2,2);	//1,2,10
+	document.write(a+"<br>");
+	a.splice(2,0,12,14,16);	//1,2,12,14,16,10
+	document.write(a+"<br>");
+	a.splice(1,1,8);		//1,8,12,14,16,10
+	document.write(a+"<br>");
+	var b=a.slice(2,5);	//12,14,16
+	document.write(b+"<br>");
+	a.reverse();	//10,16,14,12,8,1
+	document.write(a+"<br>");
+	document.write(a.reduce((acc,cur) => acc+cur,0)+"<br>");	//61
+	document.write(a.reduceRight((acc,cur) => acc-cur,0)+"<br>");	//-59
+	document.write(a.find(num => num<=10)+"<br>");	//10
+	document.write(a.findIndex(num => num=1)+"<br>");	//2
+	a.sort((a,b) => a-b);	//1,8,10,12,14,16
+	document.write(a+"<br>");
+	a.sort((a,b) => b-a);	//16,14,12,10,8,1
+	document.write(a+"<br>");
+	document.write(a.includes(12)+"<br>");	//true
+	document.write(a.includes(5)+"<br>");		//false
+	document.write(a.includes(16,2)+"<br>");	//false
+	document.write(a.indexOf(14)+"<br>");		//1
+	document.write(a.indexOf(9)+"<br>");	//-1
+	document.write(a.lastIndexOf(10)+"<br>");	//3
+</script>
+</body>
+</html>

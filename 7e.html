@@ -1,0 +1,21 @@
+<html>
+<body>
+<script>
+	var str="Lester Papadopoulos";
+	document.write("Length: "+str.length+"<br>");	//19
+	document.write("Char at index: "+str.charAt(7)+"<br>");	//P
+	document.write("If string has substring: "+str.includes("Papa")+"<br>");		//true
+	document.write("If string starts with substring: "+str.startsWith("Les")+"<br>");	//true
+	document.write("If string ends with substring: "+str.endsWith("Hi")+"<br>");		//false
+	document.write("First Occurence Index of char: "+str.indexOf('e')+"<br>");	//1
+	document.write("Last Occurence Index of char: "+str.lastIndexOf('o')+"<br>");		//17
+	document.write("Extract: "+str.slice(3,10)+"<br>");	//ter Pap
+	document.write("Repeat: "+str.repeat(2)+"<br>");	//Lester PapadopoulosLester Papadopoulos
+	document.write("To Upper Case: "+str.toUpperCase()+"<br>");		//LESTER PAPADOPOULOS
+	document.write("To Lower Case: "+str.toLowerCase()+"<br>");		//lester papadopoulos
+	document.write("Concat: "+str.concat("-Apollo")+"<br>");		//Lester Papadopoulos-Apollo
+	document.write("Replace: "+str.replace("Lester","Mr.")+"<br>");	///Mr. Papadopoulos
+	document.write("Into Array: "+str.split(" ")+"<br>");		//Lester,Papadopoulos
+</script>
+</body>
+</html>

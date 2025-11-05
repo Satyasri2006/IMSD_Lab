@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Validation</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input { margin: 5px 0; padding: 6px; width: 250px; }
+    .error { color: red; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="regForm" onsubmit="return validateForm()">
+    <label>Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <span id="nameError" class="error"></span><br>
+
+    <label>Mobile:</label><br>
+    <input type="text" id="mobile" name="mobile"><br>
+    <span id="mobileError" class="error"></span><br>
+
+    <label>Email:</label><br>
+    <input type="text" id="email" name="email"><br>
+    <span id="emailError" class="error"></span><br>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      let valid = true;
+
+      // Name validation: starts with alphabet, followed by alphanumeric, min length 6
+      const name = document.getElementById("name").value.trim();
+      const namePattern = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+      if (!namePattern.test(name)) {
+        document.getElementById("nameError").innerText = 
+          "Name must start with a letter, contain only letters/numbers, and be at least 6 characters.";
+        valid = false;
+      } else {
+        document.getElementById("nameError").innerText = "";
+      }
+
+      // Mobile validation: exactly 10 digits
+      const mobile = document.getElementById("mobile").value.trim();
+      const mobilePattern = /^[0-9]{10}$/;
+      if (!mobilePattern.test(mobile)) {
+        document.getElementById("mobileError").innerText = 
+          "Mobile number must be exactly 10 digits.";
+        valid = false;
+      } else {
+        document.getElementById("mobileError").innerText = "";
+      }
+
+      // Email validation: simple format xxxxx@xxxx.xx
+      const email = document.getElementById("email").value.trim();
+      const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById("emailError").innerText = 
+          "Please enter a valid email address.";
+        valid = false;
+      } else {
+        document.getElementById("emailError").innerText = "";
+      }
+
+      return valid;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<body>
+<script>
+	class student{
+        	constructor(name, age, city){
+        	       this.name=name;
+        	       this.age=age;
+        	       this.city=city;
+		}
+	}
+	let s=new student("Annabeth", 13, "San Fransisco");
+	document.write("for-in usage=>"+"<br>"+"<br>");
+	for (let key in s) {
+		document.write(key + ": " + s[key]+"<br>");
+	}
+	document.write("<br>"+"<br>"+"for-each usage=>"+"<br>"+"<br>");
+	let students = [
+		new student("Jane", 20, "California"),
+		new student("Elizabeth",18,"London"),
+		new student("Lydia", 15,"Edinburgh")
+	];
+	students.forEach((student, index) => {
+		for (let key in student) {
+			document.write(key + ": " + student[key]+"<br>");
+		}
+		document.write("<br>");
+	});
+	document.write("<br>"+"for-of usage=>"+"<br>"+"<br>");
+	for (let student of students) {
+		for (let key in student) {
+			document.write(key + ":" + student[key] + "<br>");
+		}
+		document.write("<br>");
+	}
+	
+</script>
+</body>
+</html>

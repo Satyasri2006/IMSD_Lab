@@ -1,0 +1,50 @@
+<html>
+<head>
+    <script>
+        function checkVoterEligibility() {
+            // Prompt the user for their name and age
+            var name = prompt("Please enter your name:");
+            var age = prompt("Please enter your age:");
+
+            // Check if the entered age is a valid number
+            if (isNaN(age) || age === "" || age === null) {
+                alert("Please enter a valid age.");
+                return;
+            }
+
+            // Convert age to an integer
+            age = parseInt(age);
+
+            // Determine if the user is eligible to vote
+            var eligibility = (age >= 18) ? "Eligible to Vote" : "Not Eligible to Vote";
+
+            // Add the entered information to the table
+            var table = document.getElementById("voterTable");
+
+            var newRow = table.insertRow();
+            var nameCell = newRow.insertCell(0);
+            var ageCell = newRow.insertCell(1);
+            var eligibilityCell = newRow.insertCell(2);
+
+            nameCell.innerHTML = name;
+            ageCell.innerHTML = age;
+            eligibilityCell.innerHTML = eligibility;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Voter Eligibility Check</h2>
+    <input type="button" value="Enter Voter Information" onclick="checkVoterEligibility();" />
+    
+    <h3>Voter Information</h3>
+    <table id="voterTable" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Eligibility</th>
+        </tr>
+    </table>
+
+</body>
+</html>
